@@ -1,0 +1,62 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: red;
+}
+.wrapper{
+	display: inline-flex;
+}
+.static{
+	font-size: 60px;
+	color: aqua;
+	font-weight: 500;
+}
+.dynamic{
+	height: 90px;
+	line-height: 90px;
+	color: navy;
+	overflow: hidden;
+}
+.dynamic li{
+	list-style-type: none;
+	font-weight: 500;
+	font-size: 60px;
+	position: relative;
+	top: 0;
+    animation: rag1 6s steps(4) infinite;
+}
+@keyframes rag1{
+	100%{
+		top: -360px;
+	}
+}
+.wrapper .dynamic{
+	margin-left: 20px;
+
+}
+.dynamic li span{
+	position: relative;
+}
+.dynamic li span::after{
+	content: "";
+	position: absolute;
+	background-color:red;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-left: 1px solid red;
+	animation: ragul 1.5s steps(10) infinite;
+}
+@keyframes ragul{
+	100%{
+		left: 100%;
+		margin: 0 35px 0 35px;
+	}
+}
